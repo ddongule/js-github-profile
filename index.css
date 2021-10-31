@@ -1,0 +1,247 @@
+* {
+  font-family: 'Pretendard-Regular';
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1;
+}
+
+main {
+  padding: 0 10rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+nav .layout-sidebar {
+  min-width: 30rem;
+}
+
+nav ul {
+  z-index: -1;
+  display: flex;
+  width: 100%;
+  list-style: none;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+  justify-items: flex-end;
+}
+
+nav ul li {
+  margin-right: 3rem;
+}
+
+nav ul li a {
+  cursor: pointer;
+}
+
+.status {
+  display: flex;
+}
+
+.status .profile {
+  max-width: 20rem;
+  height: 100%;
+}
+
+.status .profile h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0 0.2rem 0;
+}
+
+.status .profile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+.status .profile h4 {
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+.status .profile img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border: 1.5px solid #d8d8d8;
+  background: #fff;
+  margin-top: -2rem;
+}
+
+.status .profile .edit {
+  color: #24292f;
+  background-color: #f6f8fa;
+  border: 1px solid #1b1f2426;
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.status .profile .follow-infos {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.status .profile .follow-infos b {
+  margin-right: 0.2rem;
+}
+
+.status .profile .follow-infos span:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.status .profile .details {
+  display: block;
+  margin-top: 1rem;
+}
+
+.status .profile .details span:not(:first-child) {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.status .overview-wrapper {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 100%;
+}
+
+.status .repositories {
+  width: 100%;
+  max-width: 50rem;
+  margin-bottom: 4rem;
+}
+
+.status .repositories h4,
+.contributions h4 {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.status .repositories .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.status .repositories .repository {
+  display: flex;
+  height: 4rem;
+  cursor: pointer;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  padding: 1.2rem 1rem;
+  justify-content: space-between;
+}
+
+.status .repositories .repository .title {
+  display: inline-block;
+  font-size: 16px;
+  color: #0969da;
+  font-weight: 600;
+}
+
+.status .repositories .repository .public {
+  display: inline-block;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  background-color: transparent;
+  border: 1px solid #d8d8d8;
+  color: #57606a;
+  height: fit-content;
+}
+
+.contributions .wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.contributions .commit-wrapper {
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  height: fit-content;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+  width: fit-content;
+}
+
+.contributions .commit-wrapper span {
+  width: 10px;
+  height: 10px;
+  background: #d8d8d8;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.contributions .commit-wrapper span.commit {
+  background: #40c463;
+}
+
+.contributions .commit-wrapper span.light-commit {
+  background: #9be9a8;
+}
+
+.contributions .commit-wrapper span.dark-commit {
+  background: #216e39;
+}
+
+.contributions .wrapper .commit-sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.contributions .wrapper .commit-sidebar button {
+  padding: 10px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #57606a;
+  background: transparent;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
+  border-radius: 6px;
+  border: 0;
+}
+
+.contributions .wrapper .commit-sidebar button:hover {
+  background: #0969da;
+  color: white;
+}
