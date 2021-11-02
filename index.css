@@ -274,6 +274,10 @@ main .charts .google-chart {
   color: white;
 }
 
+.guide-link{
+  color: #0969da;
+}
+
 @media (min-width: 458px) and (max-width: 768px) {
   .status .repositories .wrapper {
     grid-template-columns: repeat(1, 1fr);
