@@ -3,7 +3,7 @@ import { $ } from "./utils.js";
 
 google.charts.load("current", { packages: ["corechart"] });
 
-const USER_NAME = "";
+const USER_NAME = "ddongule";
 
 function getDataTable(object) {
   return Object.entries(object);
