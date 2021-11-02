@@ -38,6 +38,7 @@ main {
 
 nav {
   display: flex;
+  justify-content: center;
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -47,11 +48,9 @@ nav .layout-sidebar {
 
 nav ul {
   display: flex;
-  width: 100%;
   list-style: none;
-  height: 3rem;
-  margin-bottom: 1.5rem;
   align-items: flex-end;
+  padding: 15px 0;
   justify-items: flex-end;
 }
 
@@ -65,17 +64,23 @@ nav ul li a {
 
 .status {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .status .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 20rem;
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .status .profile h1 {
   font-size: 1.8rem;
   font-weight: 600;
-  margin: 1rem 0 0.2rem 0;
+  margin-bottom: 1rem;
 }
 
 .status .profile h2 {
@@ -95,23 +100,13 @@ nav ul li a {
   border-radius: 50%;
   border: 1.5px solid #d8d8d8;
   background: #fff;
-  margin-top: -2rem;
-}
-
-.status .profile .edit {
-  color: #24292f;
-  background-color: #f6f8fa;
-  border: 1px solid #1b1f2426;
-  border-radius: 4px;
-  width: 100%;
-  padding: 8px;
-  font-weight: 500;
-  cursor: pointer;
+  margin: 2rem 0;
 }
 
 .status .profile .follow-infos {
   margin-top: 1rem;
   display: flex;
+  margin-bottom: 1rem;
 }
 
 .status .profile .follow-infos b {
@@ -123,8 +118,11 @@ nav ul li a {
 }
 
 .status .profile .details {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 1rem;
+  
 }
 
 .status .profile .details span:not(:first-child) {
@@ -248,4 +246,8 @@ nav ul li a {
 .contributions .wrapper .commit-sidebar button:hover {
   background: #0969da;
   color: white;
+}
+
+#language-chart {
+  margin-left: 8rem;
 }
