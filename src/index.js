@@ -1,10 +1,9 @@
-import { fetchRepoLanguage, fetchRepos, fetchUser } from './fetch.js';
+import { fetchRepoLanguage, fetchRepos, fetchUser } from "./fetch.js";
+import { $ } from "./utils.js";
 
-import { $ } from './utils.js';
+google.charts.load("current", { packages: ["corechart"] });
 
-google.charts.load('current', { packages: ['corechart'] });
-
-const USER_NAME = 'swon3210';
+const USER_NAME = "ddongule";
 
 function getDataTable(object) {
   return Object.entries(object);
@@ -12,45 +11,54 @@ function getDataTable(object) {
 
 function convertNullableText(text) {
   if (text === null) {
-    return '지정되지 않음';
+    return "지정되지 않음";
   }
 
   return text;
 }
 
 function attachUserLink() {
-  $('.overview').href = `https://github.com/${USER_NAME}`;
-  $('.repositories').href = `https://github.com/${USER_NAME}?tab=repositories`;
-  $('.projects').href = `https://github.com/${USER_NAME}?tab=projects`;
+  $(".overview").href = `https://github.com/${USER_NAME}`;
+  $(".repositories").href = `https://github.com/${USER_NAME}?tab=repositories`;
+  $(".projects").href = `https://github.com/${USER_NAME}?tab=projects`;
 }
 
 function renderUserInfo(userInfo) {
-  $('.profile img').src = userInfo.avatar_url;
-  $('.nickname').innerText = USER_NAME;
-  $('.name').innerText = userInfo.name;
-  $('.words').innerText = userInfo.bio;
-  $('.followers').innerText = userInfo.followers;
-  $('.following').innerText = userInfo.following;
-  $('.location').innerText = convertNullableText(userInfo.location);
-  $('.email').innerText = convertNullableText(userInfo.email);
+  $(".profile img").src = userInfo.avatar_url;
+  $(".nickname").innerText = USER_NAME;
+  $(".name").innerText = userInfo.name;
+  $(".words").innerText = userInfo.bio;
+  $(".followers").innerText = userInfo.followers;
+  $(".following").innerText = userInfo.following;
+  $(".location").innerText = convertNullableText(userInfo.location);
+  $(".email").innerText = convertNullableText(userInfo.email);
 }
 
 function renderLanguageChart(dataTable) {
-  const dataTableHeader = ['언어', '작성된 코드 라인'];
+  if (!dataTable) {
+    return;
+  }
 
-  const data = google.visualization.arrayToDataTable([dataTableHeader, ...dataTable]);
+  const dataTableHeader = ["언어", "작성된 코드 라인"];
+
+  const data = google.visualization.arrayToDataTable([
+    dataTableHeader,
+    ...dataTable,
+  ]);
 
   const options = {
-    title: '',
+    title: "",
     pieHole: 0.4,
   };
 
-  const chart = new google.visualization.PieChart(document.querySelector('#language-chart'));
+  const chart = new google.visualization.PieChart(
+    document.querySelector("#language-chart")
+  );
   chart.draw(data, options);
 }
 
 function renderRepoList(repos) {
-  $('.repositories .wrapper').innerHTML = repos
+  $(".repositories .wrapper").innerHTML = repos
     .map(
       (repo) => `
     <a href=${repo.html_url} class="repository">
@@ -59,12 +67,11 @@ function renderRepoList(repos) {
     </a>
   `
     )
-    .join('');
+    .join("");
 }
 
 function renderPortfolio() {
   const totalLanguage = {};
-
   attachUserLink();
 
   // Render User Info
